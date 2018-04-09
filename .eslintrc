@@ -1,0 +1,59 @@
+{
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "allowImportExportEverywhere": false
+  },
+
+  "env": {
+    "browser": true
+  },
+
+  "plugins": [
+    "vue"
+  ],
+
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "airbnb-base"
+  ],
+
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "build/webpack.base.conf.js"
+      }
+    }
+  },
+
+  "rules": {
+    "vue/html-self-closing": "off",
+    "no-console": "off",
+
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        "js": "never",
+        "vue": "never"
+      }
+    ],
+
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state", "acc", "e"]
+      }
+    ],
+
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "optionalDependencies": ["test/unit/index.js"]
+      }
+    ]
+  }
+}
